@@ -9,12 +9,13 @@ router.get('/users/:id', (req, res) => {
   const { id } = req.params;
 
   if (!users[id]) {
-    res.send({ error: `ID de usuario no encontrado` });
+    res.send({ error: `ID de usuario no encontrado` }).status(404);
     return;
   }
 
   res.send(users[id]);
 });
+
 
 module.exports = router;
 

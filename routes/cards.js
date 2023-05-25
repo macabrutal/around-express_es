@@ -9,7 +9,7 @@ router.get('/cards/:id', (req, res) => {
   const { id } = req.params;
 
   if (!cards[id]) {
-    res.send({ error: `Esta card no existe` });
+    res.send({ error: `Esta card no existe` }).status(404);
     return;
   }
 
