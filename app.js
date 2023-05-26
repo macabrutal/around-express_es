@@ -7,8 +7,8 @@ const { PORT = 3000 } = process.env;    // detecta el puerto 3000
 
 const app = express();
 
-app.use('/routes', cards);
-app.use('/routes', users);
+app.use('/cards', cards);
+app.use('/users', users);
 
 app.listen(PORT, () => {
   // si todo funciona bien la consola mostrará qué puerto está detectando la aplicación

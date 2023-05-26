@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const cards  = require('../data/cards.json');
 
-router.get('/cards', (req, res) => {
+router.get('/', (req, res) => {
   res.send(cards);
 });
 
-router.get('/cards/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const { id } = req.params;
 
   if (!cards[id]) {
@@ -17,7 +17,6 @@ router.get('/cards/:id', (req, res) => {
 });
 
 module.exports = router;
-
 
 
 
