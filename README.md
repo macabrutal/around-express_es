@@ -1,11 +1,16 @@
 # Around the U.S. Back End
 
-Creación de mi propio servidor para el proyecto "Alrededor de los EE. UU.".
-Se creó un servidor con una API y autenticación del usuario.
-Se trabajó con bases de datos.
-Se desplegó el backend en una máquina remota.
+## Descripción general
 
-## Directories
+Este proyecto es la creación de mi propio servidor para el proyecto "Alrededor de los EE. UU.".
+
+## Funcionalidad
+
+- Se creó un servidor con una API y autenticación del usuario.
+- Se trabajó con bases de datos.
+- Se desplegó el backend en una máquina remota.
+
+## Directorios
 
 `/data` — JSON files to temporarily emulate database integration.
 
