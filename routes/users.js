@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   const { id } = req.params;
 
   if (!users[id]) {
-    res.status(404).send({ message:  'ID de usuario no encontrado' });
+    res.status(404).send({ message: 'ID de usuario no encontrado' });
     return;
   }
   res.status(200).send(users);
@@ -29,21 +29,3 @@ router.get('/:id', (req, res) => {
 module.exports = router;
 
 
-
-
-// router.get('/', (req, res) => {
-//   res.send(users);
-// });
-
-// router.get('/:id', (req, res) => {
-//   const { id } = req.params;
-//   const user = users.find((user) => user._id === id);
-
-//   if (!user) {
-//     res.send({ error: 'ID de usuario no encontrado' }).status(404);
-//     return;
-//   }
-//   res.send(user).status(200);
-// });
-
-// module.exports = router;
