@@ -9,6 +9,10 @@ const app = express();
 app.use('/cards', cards);
 app.use('/users', users);
 
+app.use('/', (req, res) => {
+  res.status(404).send({ message: 'Recurso solicitado no encontrado' });
+});
+
 app.listen(PORT, () => {
   // si todo funciona bien la consola mostrará qué puerto está detectando la aplicación
   console.log(`App listening at port ${PORT}`);

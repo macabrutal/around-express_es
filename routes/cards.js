@@ -1,15 +1,15 @@
 const router = require('express').Router();
+const path = require('path');
+const fs = require('fs');
 const cards = require('../data/cards.json');
-const path = require("path");
-const fs = require("fs");
 
-const filePath = path.join(__dirname, "../data/cards.json");
+const filePath = path.join(__dirname, '../data/cards.json');
 
-router.get("/", (req, res) => {
-  fs.readFile(filePath, { encoding: "utf8" }, (err, data) => {
-    const cardData =JSON.parse(data);
-    res.send(cardData)
-});
+router.get('/', (req, res) => {
+  fs.readFile(filePath, { encoding: 'utf8' }, (err, data) => {
+    const cardData = JSON.parse(data);
+    res.send(cardData);
+  });
 });
 
 router.get('/:id', (req, res) => {
@@ -23,12 +23,12 @@ router.get('/:id', (req, res) => {
   res.status(200).send(cards[id]);
 });
 
-
-
 module.exports = router;
 
-//app.get('/', (req, res) => {
 
+
+
+// app.get('/', (req, res) => {
 
 // router.get('/', (req, res) => {
 //   res.send(cards);
