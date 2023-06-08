@@ -32,7 +32,6 @@ module.exports.createUser = (req, res) => {
   const { name, about, avatar } = req.body;
 
   User.create({ name, about, avatar })
-    .orFail()
     .then((user) => res.send({ data: user }))
     .catch((error) => {
       if (error.name === 'SomeErrorName') {

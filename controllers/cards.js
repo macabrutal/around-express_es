@@ -31,6 +31,7 @@ module.exports.createCards = (req, res) => {
 
 module.exports.deleteCard = (req, res) => {
   Card.findByIdAndRemove(req.params.id)
+    .orFail()
     .then((card) => res.send({ data: card }))
     .catch((error) => {
       if (error.name === 'SomeErrorName') {
