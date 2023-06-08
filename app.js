@@ -6,13 +6,14 @@ const users = require('./routes/users');
 const { PORT = 3000 } = process.env;
 
 const app = express();
+app.use(express.json());
 
 // mongoose.connect('mongodb://localhost:27017/aroundb');
 mongoose.connect('mongodb://127.0.0.1:27017/aroundb');
 
 app.use((req, res, next) => {
   req.user = {
-    _id: '6481db13a15f254d923e365a',
+    _id: '648218777efb89b11d43fdd0',
   };
 
   next();
