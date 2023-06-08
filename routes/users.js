@@ -1,4 +1,4 @@
-//faltan 2 rutas para users: updateProfile / updateAvatar
+// faltan 2 rutas para users: updateProfile / updateAvatar
 // PATCH /users/me — actualizar el perfil
 // PATCH /users/me/avatar — actualizar el avatar
 
@@ -8,21 +8,12 @@ const { getUser, getUserById, createUser } = require('../controllers/users');
 
 // definir rutas
 router.get('/', getUser);
-router.get('/:id', getUserById)
+router.get('/:id', getUserById);
 router.post('/', createUser);
-
-
 
 module.exports = router;
 
-
-
-
-
-
-
-
-//ANTIGUO
+// ANTIGUO
 // const path = require('path');
 // const fs = require('fs');
 

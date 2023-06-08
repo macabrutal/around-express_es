@@ -1,10 +1,8 @@
-//faltan 2 rutas para cards : likeCard / dislikeCard
+// faltan 2 rutas para cards : likeCard / dislikeCard
 
 const router = require('express').Router();
 
-
 const { getCards, createCards, deleteCard } = require('../controllers/cards');
-
 
 // definir rutas
 router.get('/', getCards);
@@ -13,19 +11,7 @@ router.delete('/:id', deleteCard);
 
 module.exports = router;
 
-
-
-
-
-
-
-
-
-
-
-
-
-//-- ANTIGIUO
+// -- ANTIGIUO
 
 // const path = require('path');
 // const fs = require('fs');
