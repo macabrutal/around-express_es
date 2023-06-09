@@ -5,9 +5,7 @@ module.exports.getUser = (req, res) => {
     .orFail()
     .then((users) => res.send({ data: users }))
     .catch((error) => {
-      if (error.name === 'SomeErrorName') {
-        return res.status(400).send({ message: 'Datos inválidos para crear un usuario/tarjeta o actualizar el avatar/perfil de un usuario' });
-      } if (error.status === 404) {
+      if (error.status === 404) {
         return res.status(404).send({ message: 'Usuario no encontrado' });
       }
       return res.status(500).send({ message: 'Error del servidor' });
@@ -19,9 +17,7 @@ module.exports.getUserById = (req, res) => {
     .orFail()
     .then((user) => res.send({ data: user }))
     .catch((error) => {
-      if (error.name === 'SomeErrorName') {
-        return res.status(400).send({ message: 'Datos inválidos para crear un usuario/tarjeta o actualizar el avatar/perfil de un usuario' });
-      } if (error.status === 404) {
+      if (error.status === 404) {
         return res.status(404).send({ message: 'Usuario no encontrado' });
       }
       return res.status(500).send({ message: 'Error del servidor' });

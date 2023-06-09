@@ -5,9 +5,7 @@ module.exports.getCards = (req, res) => {
     .orFail()
     .then((cards) => res.send({ data: cards }))
     .catch((error) => {
-      if (error.name === 'SomeErrorName') {
-        return res.status(400).send({ message: 'Datos inválidos para crear una tarjeta' });
-      } if (error.status === 404) {
+      if (error.status === 404) {
         return res.status(404).send({ message: 'Cards no encontrada' });
       }
       return res.status(500).send({ message: 'Error del servidor' });
@@ -35,7 +33,7 @@ module.exports.deleteCard = (req, res) => {
     .then((card) => res.send({ data: card }))
     .catch((error) => {
       if (error.name === 'SomeErrorName') {
-        return res.status(400).send({ message: 'Datos inválidos para crear una tarjeta' });
+        return res.status(400).send({ message: 'Datos inválidos para eliminar una tarjeta' });
       } if (error.status === 404) {
         return res.status(404).send({ message: 'Cards no encontrada' });
       }
@@ -53,7 +51,7 @@ module.exports.likeCard = (req, res) => {
     .then((card) => res.send({ data: card }))
     .catch((error) => {
       if (error.name === 'SomeErrorName') {
-        return res.status(400).send({ message: 'Datos inválidos para crear una tarjeta' });
+        return res.status(400).send({ message: 'Datos inválidos para modificar una tarjeta' });
       } if (error.status === 404) {
         return res.status(404).send({ message: 'Cards no encontrada' });
       }
@@ -71,7 +69,7 @@ module.exports.dislikeCard = (req, res) => {
     .then((card) => res.send({ data: card }))
     .catch((error) => {
       if (error.name === 'SomeErrorName') {
-        return res.status(400).send({ message: 'Datos inválidos para crear una tarjeta' });
+        return res.status(400).send({ message: 'Datos inválidos para modificar una tarjeta' });
       } if (error.status === 404) {
         return res.status(404).send({ message: 'Cards no encontrada' });
       }
